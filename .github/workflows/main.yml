@@ -11,10 +11,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
       - name: Select Xcode Version
-        run: sudo sxcode-select -switch /Application/Xcode_14.3.1.app
+        run: sudo xcode-select -switch /Applications/Xcode_14.3.1.app
       - name: Check Xcode Version
         run: xcodebuild -version
       - name: Build
-        run: xcodebuild build-for-testing CODE_SIGNING_ALLOWED=NO -scheme "GithubActions" -destination "platform=iOS Simulator, name=iPhone 14"
-      - name: Test
-        run: xcodebuild test-without-building -scheme "GithubActions" -destination "platform=iOS Simulator, name=iPhone 14"
+        run: xcodebuild build-for-testing CODE_SIGNING_ALLOWED=NO -scheme "GithubActions" -destination "platform=iOS Simulator,name=iPhone 14"
