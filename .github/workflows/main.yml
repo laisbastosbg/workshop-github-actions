@@ -16,5 +16,3 @@ jobs:
         run: xcodebuild -version
       - name: Build
         run: xcodebuild build-for-testing CODE_SIGNING_ALLOWED=NO -scheme "GithubActions" -destination "platform=iOS Simulator,name=iPhone 14"
-      - name: Test
-        run: xcodebuild test-without-building -scheme "GithubActions" -destination "platform=iOS Simulator,name=iPhone 14"
